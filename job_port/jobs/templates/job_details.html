@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="max-width: 1000px; margin: 0 auto;">
+    <h1> Job Details</h1>
+    <div class="job-details-section">
+        <image src="{{ job.logo.url }}" alt="logo" width="500px" height="300px"></image>
+        <h3>{{ job.title }}</h3>
+        <h5> Company: {{ job.company }}</h5>
+        <h5> Salary: {{ job.salary }}</h5>
+        <h5> Role: {{ job.role }}</h5>
+        <h5> Location: {{ job.location }}</h5>
+        <h5> Description:</h5>
+        <p>{{ job.description | linebreaks }}</p>
+    </div>
+
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <h3>Apply for this job</h3>
+        <form action="{% url 'job_apply' job.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit"> Submit Application</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

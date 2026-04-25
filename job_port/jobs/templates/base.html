@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Minified version -->
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+
+<!-- Un-Minified version -->
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <title>job portal</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header nav ol {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        header nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .job-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .job-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .job-card a {
+            text-decoration: none;
+            color: #667eea;
+        }
+        
+        .job-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        
+        .job-card h5 {
+            margin: 8px 0;
+            color: #666;
+        }
+        
+        .job-details-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .job-logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        
+        button:hover {
+            opacity: 0.9;
+        }
+        
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <h1> Job Portal</h1>
+    <nav>
+        <ol>
+            <li> <a href="{% url 'home' %}" > Home</a></li>
+            <li> <a href="{% url 'job_list' %}" > Jobs</a></li>
+            <li> <a href="{% url 'login' %}" > Login</a></li>
+            <li> <a href="{% url 'registration' %}" > Register</a></li>
+            
+        </ol>
+    </nav>
+   </header>
+   {% block content %}
+    
+   {% endblock content %}
+</body>
+</html>

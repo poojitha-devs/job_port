@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="max-width: 1000px; margin: 0 auto;">
+    <h1> Available Jobs</h1>
+    {% for job in jobs %}
+    <div class="job-card">
+        <a href="{% url 'job_details' job.id %}"><h3>{{ job.title }}</h3></a>
+        <h5> {{ job.company }}</h5>
+        <h5> {{ job.salary }}</h5>
+        <h5> {{ job.role }}</h5>
+    </div>
+    {% empty %}
+    <p>No jobs available at the moment.</p>
+    {% endfor %}
+</div>
+{% endblock content %}
